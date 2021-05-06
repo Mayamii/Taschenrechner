@@ -1,52 +1,59 @@
 .row {
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
 }
 .calc {
-  background-color: black;
-  width: 400px;
-  height: 600px;
+    background-color: black;
+    width: 400px;
+    height: 600px;
 }
 .grey {
-  background-color: rgb(206, 206, 206);
+    background-color: rgb(206, 206, 206);
 }
 .orange {
-  background-color: rgb(255, 168, 86);
+    background-color: rgb(255, 168, 86);
 }
 .long-2 {
-  width: 49.95%;
+    width: 49.95%;
 
-  padding: 0px;
+    padding: 0px;
 }
 
 .long-3 {
-  width: 74.95%;
+    width: 74.95%;
 
-  padding: 0px;
+    padding: 0px;
 }
 .quadrat {
-  padding: 0px;
-  width: 24.95%;
+    padding: 0px;
+    width: 24.95%;
 }
 .text-field {
-  background: black;
+    background: black;
 }
 button > * {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 24pt;
-  font-style: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24pt;
+    font-style: bold;
 }
 
 .grey > * {
-  color: black;
+    color: black;
 }
 
 .orange > * {
-  color: white;
+    color: white;
 }
 
 button {
-  border-color: black;
-  margin-bottom: 0.05%;
+    border-color: black;
+    margin-bottom: 0.05%;
+}
+#output-field {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24pt;
+    text-align: right;
+    width: 400px;
 }

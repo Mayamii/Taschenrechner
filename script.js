@@ -8,7 +8,7 @@ function reset() {
     savedOperator = ''
     savedNumber = ''
     bufferedNumber = ''
-    consoleLogging()
+    rerender()
 }
 //comes from Buttons, decides which functions to run depending on inputbutton
 // eslint-disable-next-line no-unused-vars
@@ -21,7 +21,7 @@ function input(buttonPushed) {
             saveOperator(buttonPushed)
             break
         case 'equals':
-            calculate()
+            equals()
             break
         case 'c':
             reset()
@@ -41,30 +41,21 @@ function calculate() {
         resultExisting = true
         const var2 = parseInt(bufferedNumber)
         const var1 = parseInt(savedNumber)
-        let var3
         let Operator = savedOperator
         savedOperator = ''
         savedNumber = ''
-
         switch (Operator) {
             case '*':
-                var3 = var1 * var2
-                bufferedNumber = var3.toString()
-                debugger
-                consoleLogging()
-
+                bufferedNumber = (var1 * var2).toString()
                 break
             case '/':
-                bufferedNumber = toString(var1 / var2)
-                consoleLogging()
+                bufferedNumber = (var1 / var2).toString()
                 break
             case '+':
-                bufferedNumber = toString(var1 + var2)
-                consoleLogging()
+                bufferedNumber = (var1 + var2).toString()
                 break
             case '-':
-                bufferedNumber = toString(var1 - var2)
-                consoleLogging()
+                bufferedNumber = (var1 - var2).toString()
                 break
         }
     }
@@ -77,14 +68,14 @@ function typeNumbers(numberPressed) {
         resultExisting = false
     }
     bufferedNumber = bufferedNumber + numberPressed
-    consoleLogging()
+    rerender()
 }
 
 //removes last character of bufferedNumber
 function deleteCharacter() {
     if (bufferedNumber != '') {
         bufferedNumber = bufferedNumber.substring(0, bufferedNumber.length - 1)
-        consoleLogging()
+        rerender()
     }
 }
 
@@ -94,19 +85,19 @@ function saveOperator(x) {
     savedOperator = x
     savedNumber = bufferedNumber
     bufferedNumber = ''
-    consoleLogging()
 }
 
 //gets triggered after pressing equals, calculates and resets savedOperator and saved Number
 // eslint-disable-next-line no-unused-vars
 function equals() {
     calculate()
-    consoleLogging()
+    rerender()
 }
 
-function consoleLogging() {
-    console.log(bufferedNumber)
-    console.log(savedNumber)
-    console.log(savedOperator)
-    console.log(resultExisting)
+function rerender() {
+    if (bufferedNumber == '') {
+        document.getElementById('output-field').innerHTML = '0'
+    } else {
+        document.getElementById('output-field').innerHTML = bufferedNumber
+    }
 }
