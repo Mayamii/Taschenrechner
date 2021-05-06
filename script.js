@@ -8,7 +8,7 @@ function reset() {
     savedOperator = ''
     savedNumber = ''
     bufferedNumber = ''
-    rerender()
+    displayResult()
 }
 //comes from Buttons, decides which functions to run depending on inputbutton
 // eslint-disable-next-line no-unused-vars
@@ -41,10 +41,9 @@ function calculate() {
         resultExisting = true
         const var2 = parseInt(bufferedNumber)
         const var1 = parseInt(savedNumber)
-        let Operator = savedOperator
-        savedOperator = ''
-        savedNumber = ''
-        switch (Operator) {
+        let operator = savedOperator
+        reset()
+        switch (operator) {
             case '*':
                 bufferedNumber = (var1 * var2).toString()
                 break
@@ -68,14 +67,14 @@ function typeNumbers(numberPressed) {
         resultExisting = false
     }
     bufferedNumber = bufferedNumber + numberPressed
-    rerender()
+    displayResult()
 }
 
 //removes last character of bufferedNumber
 function deleteCharacter() {
     if (bufferedNumber != '') {
         bufferedNumber = bufferedNumber.substring(0, bufferedNumber.length - 1)
-        rerender()
+        displayResult()
     }
 }
 
@@ -91,10 +90,10 @@ function saveOperator(x) {
 // eslint-disable-next-line no-unused-vars
 function equals() {
     calculate()
-    rerender()
+    displayResult()
 }
-
-function rerender() {
+//this function puts bufferedNumber in the paragraph with the id "output-field"
+function displayResult() {
     if (bufferedNumber == '') {
         document.getElementById('output-field').innerHTML = '0'
     } else {
