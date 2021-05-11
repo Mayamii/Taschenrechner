@@ -38,7 +38,6 @@ function input(buttonPushed) {
 //only exists to replace bufferedNumber with result, sets calcBoolean true
 function calculate() {
     if (savedNumber != '' && savedOperator != '') {
-        resultExisting = true
         const var2 = parseInt(bufferedNumber)
         const var1 = parseInt(savedNumber)
         let operator = savedOperator
@@ -78,10 +77,11 @@ function deleteCharacter() {
     }
 }
 
-//when you type an operator it triggers this function. it triggers calculate if 
+//when you type an operator it triggers this function. it triggers calculate if
 //savedNumber and savedOperator are already existing, then overrides savedOperator
 function saveOperator(x) {
     calculate()
+    displayResult()
     savedOperator = x
     savedNumber = bufferedNumber
     bufferedNumber = ''
@@ -90,6 +90,7 @@ function saveOperator(x) {
 //gets triggered after pressing equals, calculates and resets savedOperator and saved Number
 // eslint-disable-next-line no-unused-vars
 function equals() {
+    resultExisting = true
     calculate()
     displayResult()
 }
