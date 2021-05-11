@@ -3,35 +3,56 @@
     display: flex;
     justify-content: space-between;
 }
+
 .calc {
     background-color: black;
     width: 400px;
     height: 600px;
 }
+
 .grey {
     background-color: rgb(206, 206, 206);
 }
+
 .orange {
     background-color: rgb(255, 168, 86);
 }
+
+.orange:hover {
+    background-color: rgb(253, 188, 127);
+}
+
+.grey:hover {
+    background-color: rgb(224, 224, 224);
+}
+
+.orange:active {
+    background-color: rgb(223, 143, 68);
+}
+
+.grey:active {
+    background-color: rgb(185, 185, 185);
+}
+
 .long-2 {
     width: 49.95%;
-
     padding: 0px;
 }
 
 .long-3 {
     width: 74.95%;
-
     padding: 0px;
 }
+
 .quadrat {
     padding: 0px;
     width: 24.95%;
 }
+
 .text-field {
     background: black;
 }
+
 button > * {
     font-family: 'Courier New', Courier, monospace;
     font-size: 24pt;
@@ -50,6 +71,7 @@ button {
     border-color: black;
     margin-bottom: 0.05%;
 }
+
 #output-field {
     color: white;
     font-family: 'Courier New', Courier, monospace;

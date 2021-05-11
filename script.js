@@ -78,7 +78,8 @@ function deleteCharacter() {
     }
 }
 
-//when you type an operator it triggers this function. it triggers calculate if savednumber and savedoperator are already existing, then overrides savedoperator
+//when you type an operator it triggers this function. it triggers calculate if 
+//savedNumber and savedOperator are already existing, then overrides savedOperator
 function saveOperator(x) {
     calculate()
     savedOperator = x
@@ -92,6 +93,7 @@ function equals() {
     calculate()
     displayResult()
 }
+
 //this function puts bufferedNumber in the paragraph with the id "output-field"
 function displayResult() {
     if (bufferedNumber == '') {
