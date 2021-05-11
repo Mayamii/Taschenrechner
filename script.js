@@ -98,8 +98,10 @@ function equals() {
 //this function puts bufferedNumber in the paragraph with the id "output-field"
 function displayResult() {
     if (bufferedNumber == '') {
+        // eslint-disable-next-line no-undef
         document.getElementById('output-field').innerHTML = '0'
     } else {
+        // eslint-disable-next-line no-undef
         document.getElementById('output-field').innerHTML = bufferedNumber
     }
 }
